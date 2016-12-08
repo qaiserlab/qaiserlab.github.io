@@ -33,9 +33,10 @@
         </form>
         
         <ul>
-            <li v-for="item in pesan">
+            <li v-for="item in pesanKita">
             {{ item.nama }}<br>
-            {{ item.message }}
+            {{ item.message }}<br>
+            <a href="javascript:" @click="hapusPesan(item)">Hapus</a>
             <hr>
             </li>
         </ul>
@@ -55,6 +56,12 @@
                 message: '',
             },
             
+            computed: {
+                pesanKita: function () {
+                    return this.pesan.sort();
+                },
+            },
+            
             methods: {
                 kirimPesan: function () {
                     this.$firebaseRefs.pesan.push({
@@ -64,6 +71,10 @@
                     
                     this.nama = '';
                     this.message = '';
+                },
+                
+                hapusPesan: function (item) {
+                    this.$firebaseRefs.pesan.child(item['.key']).remove();
                 },
             },
         });
