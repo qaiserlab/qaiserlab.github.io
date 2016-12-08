@@ -3,8 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>QaiserLab Space</title>
+    
+    <script src="https://unpkg.com/vue@2.1.4/dist/vue.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCf_kYooj02DlQNE2Co2_T4w_ahyCT3cVE",
+        authDomain: "qaiserlab-16ccc.firebaseapp.com",
+        databaseURL: "https://qaiserlab-16ccc.firebaseio.com",
+        storageBucket: "qaiserlab-16ccc.appspot.com",
+        messagingSenderId: "330347190605"
+      };
+      var firebaseApp = firebase.initializeApp(config);
+    </script>
+    
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
 </head>
 <body>
-    <h1>QaiserLab Space</h1>
+    <div id="main">
+        <h1>{{ test }}</h1>
+        
+        <form @submit.prevent="kirimPesan">
+            
+            <input v-model="nama" type="text" placeholder="Nama"><br>
+            <textarea v-model="message" cols="30" rows="10" placeholder="Pesan"></textarea><br>
+            <button type="submit">Kirim</button>
+        </form>
+        
+        <ul>
+            <li v-for="item in pesan">
+            {{ item.nama }}<br>
+            {{ item.message }}
+            <hr>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        var db = firebaseApp.database();
+    
+        var vm = new Vue({
+            el: '#main',
+            firebase: {
+                pesan: db.ref('pesan'),
+            },
+            data: {
+                test: 'Chatting',
+                nama: '',
+                message: '',
+            },
+            
+            methods: {
+                kirimPesan: function () {
+                    this.$firebaseRefs.pesan.push({
+                        nama: this.nama,
+                        message: this.message,
+                    });
+                    
+                    this.nama = '';
+                    this.message = '';
+                },
+            },
+        });
+    
+    </script>
 </body>
 </html>
