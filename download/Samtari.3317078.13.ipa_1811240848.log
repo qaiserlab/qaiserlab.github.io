@@ -1,0 +1,24 @@
+[2018-11-24 08:48:33 ICT] <Thread-16>  INFO: Logging to file: D:\xampp\htdocs\qaiserlab.github.io\download\Samtari.3317078.13.ipa_1811240848.log
+[2018-11-24 08:48:33 ICT] <Thread-16>  INFO: Logging configured successfully.
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: iTMSTransporter : iTunes Store Transporter [1.9.8]
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: OS identifier: Windows 7 6.1 (amd64); jvm=25.131-b11; jre=1.8.0_131-b11
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: Memory: [JVM] 210M free, 274M total, 1799M max [System] (Physical) 4927M free, 8090M total (Swap) 12262M free, 16180M total
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: Upload mode selected.
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: Examining the package at: C:\Users\QAISER~1\AppData\Local\Temp\au\itmsp\1444415622.itmsp
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: Ensuring that package has well formed metadata file...
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: Gathering the list of valid files from the package ...
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: Finished gathering the list of valid files from the package.
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: Verify progress: Analyzing metadata (Step 2/?)
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: Performing authentication of package 1444415622.itmsp ...
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: Verify progress: Analyzing metadata (Step 3/2)
+[2018-11-24 08:48:34 ICT] <Thread-16>  INFO: id = 20181124084834-687
+[2018-11-24 08:48:35 ICT] <Thread-16> ERROR: Please sign in with an app-specific password. You can create one at appleid.apple.com. (-22910)
+[2018-11-24 08:48:35 ICT] <Thread-16>  INFO: Verify progress: Operation failed (Step 2/2)
+
+
+
+Package Summary:
+ 
+1 package(s) were not uploaded because they had problems:
+	C:\Users\QAISER~1\AppData\Local\Temp\au\itmsp\1444415622.itmsp - Error Messages:
+		Please sign in with an app-specific password. You can create one at appleid.apple.com. (-22910)
