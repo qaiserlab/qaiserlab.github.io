@@ -134,8 +134,8 @@
           editor.on('keyup', this.handleInput.bind(this));
           editor.on('change', this.handleInput.bind(this));
 
-          // editor.on('init', this.handleInit.bind(this));
-          editor.on('click', this.handleInit.bind(this));
+          editor.on('init', this.handleInit.bind(this));
+          // editor.on('click', this.handleInit.bind(this));
         }.bind(this),
       });
 
@@ -146,15 +146,23 @@
     ************************/
     methods: {
 
+      initContent: function () {
+        if (!this.clicked) {
+          setTimeout(() => {
+            if (this.value) {
+              tinymce.activeEditor.setContent(this.value);
+              this.clicked = true;
+            }
+            this.initContent();
+          }, 100);
+        }
+      },
+ 
       /************************
       <id="_handleInit">
       ************************/
       handleInit: function () {
-
-        if (!this.clicked) {
-          tinymce.activeEditor.setContent(this.value);
-          this.clicked = true;
-        }
+        this.initContent();
       },
 
       /************************
